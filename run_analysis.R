@@ -59,3 +59,6 @@ aggregate <- aggregate(full[,-c(1:3)], by=list(subject = full$subject,activityde
 
 # Output the aggregated table
 write.table(aggregate,"aggregate.txt",sep="\t",row.names = FALSE)
+
+# Remove all the objects from environment except the tidy dataset
+rm(list=setdiff(ls(), "aggregate"))
